@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 46th Monthsary, My Baby Klariss 💙</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Canvas for Stars & Shooting Stars -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- Ambient Floating Heart Particles Container -->
+  <div class="floating-hearts-container" id="heartsContainer"></div>
+
+  <!-- Audio Control Button -->
+  <header class="top-nav">
+    <div class="brand-pill">
+      <i class="fa-solid fa-moon brand-icon"></i>
+      <span>Night Under The Stars</span>
+    </div>
+    
+    <div class="nav-controls">
+      <button class="music-btn" id="musicToggle" title="Play / Pause Romantic Music Box Melody">
+        <i class="fa-solid fa-music"></i>
+        <span class="music-status">Play Melody</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main class="main-container">
+    
+    <!-- Hero Header -->
+    <section class="hero-text">
+      <div class="milestone-badge">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>46TH MONTHSARY SPECIAL</span>
+        <i class="fa-solid fa-sparkles"></i>
+      </div>
+      
+      <h1 class="hero-title">
+        For My Dearest <span class="glow-name">Klariss</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        <i class="fa-solid fa-heart-pulse love-icon"></i>
+        A special handwritten letter from the deepest part of my heart.
+      </p>
+    </section>
+
+    <!-- Interactive Envelope Card Section -->
+    <section class="envelope-wrapper">
+      <div class="envelope-guide">
+        <i class="fa-regular fa-hand-pointer tap-icon"></i>
+        <span>Click the wax seal to open your letter</span>
+      </div>
+
+      <!-- The 3D Realistic Envelope -->
+      <div class="envelope-box" id="envelopeBox" role="button" aria-label="Open Love Letter for Klariss" tabindex="0">
+        <!-- Back Flap of Envelope -->
+        <div class="envelope-back"></div>
+
+        <!-- The Peeking Letter Inside -->
+        <div class="envelope-letter-preview">
+          <div class="mini-lines">
+            <span class="mini-line w-80"></span>
+            <span class="mini-line w-60"></span>
+            <span class="mini-line w-70"></span>
+          </div>
+          <div class="mini-heart">💙</div>
+        </div>
+
+        <!-- Envelope Body (Pocket) -->
+        <div class="envelope-pocket">
+          <!-- Postal Stamp Design -->
+          <div class="postal-stamp">
+            <i class="fa-solid fa-infinity stamp-symbol"></i>
+            <span class="stamp-number">46M</span>
+          </div>
+
+          <!-- To & From Info -->
+          <div class="envelope-label">
+            <div class="label-to">
+              <span class="label-tag">TO:</span>
+              <span class="label-name">My Baby Klariss 💙</span>
+            </div>
+            <div class="label-sub">
+              <i class="fa-solid fa-location-dot"></i> Always in My Heart
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Foldable Flap with 3D Triangle -->
+        <div class="envelope-flap" id="envelopeFlap">
+          <!-- Wax Seal -->
+          <div class="wax-seal" id="waxSeal" title="Break the seal to open">
+            <div class="seal-inner">
+              <i class="fa-solid fa-heart seal-heart"></i>
+              <span class="seal-text">46</span>
+            </div>
+            <div class="seal-ripple"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Badges -->
+      <div class="interactive-pills">
+        <div class="feature-pill">
+          <i class="fa-solid fa-shield-heart"></i>
+          <span>Forever & Always</span>
+        </div>
+        <div class="feature-pill">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>1,400+ Days of Us</span>
+        </div>
+        <div class="feature-pill">
+          <i class="fa-solid fa-compass"></i>
+          <span>No Matter the Distance</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Letter Modal / Expanded View -->
+  <div class="letter-modal-overlay" id="letterModal">
+    <div class="letter-modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="letter-container" id="letterContainer">
+      <!-- Top Actions Bar inside letter -->
+      <div class="letter-top-bar">
+        <div class="letter-badge">
+          <i class="fa-solid fa-envelope-open-text"></i>
+          <span>Private Love Letter</span>
+        </div>
+        <button class="close-letter-btn" id="closeLetterBtn" aria-label="Fold and close letter">
+          <i class="fa-solid fa-xmark"></i>
+          <span>Fold Letter</span>
+        </button>
+      </div>
+
+      <!-- The Royal Parchment Document -->
+      <article class="letter-parchment">
+        <!-- Golden Corner Ornaments -->
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
+
+        <!-- Letter Header -->
+        <header class="letter-header">
+          <div class="header-icon-row">
+            <i class="fa-solid fa-star header-star"></i>
+            <i class="fa-solid fa-heart header-heart"></i>
+            <i class="fa-solid fa-star header-star"></i>
+          </div>
+          <span class="letter-date">Happy 46th Monthsary &bull; Under Our Starry Sky</span>
+          <h2 class="letter-salutation">Dear Klariss,</h2>
+        </header>
+
+        <!-- The Exact Heartfelt Message Body -->
+        <section class="letter-body">
+          <p class="letter-paragraph drop-cap">
+            Dear Klariss, I just wanna say thank you for everything. Thank you for understanding me in the most difficult times in my life. To be honest dako kayo gihatag nimo saakong life nga something like kalipay, I am really happy po nga ikaw gf nako and if gaan man kog 2nd life I will choose you all over again and again.
+          </p>
+
+          <p class="letter-paragraph">
+            I really wanna be with you til’ the day nga mahurot akong ginhawa because in the first place somehow ikaw ang one of the reasons why I keep living in this nightmare life, Thank you kay wa jud ka ni give up saakoa even though daghan ko flaws saatong duha, you still kept doing your best nga pinanggaon ko nimo.
+          </p>
+
+          <p class="letter-paragraph">
+            Sorry if there’s times nga masakitan tika po, nga maglagot kas akoa and kanang wa naka ganahi saakoa tungod kay makasala ko nimo, sorry sa mga ingana na scenarios sa atong RS.
+          </p>
+
+          <p class="letter-paragraph">
+            Pero tbh I learned a lot po, I learned how to love you without actually seeing you personally, I learned nga di nimo need nga daghan imo friends as long as naa kay beautiful gf nga same saimoha. Wa jud ko nimo na disappoint and most of all wa jud ko nakasuway ko nga nag overthink ko dahil saimohang actions and I am very happy with that po, I am very lucky to have you in my life my baby, Iloveyou my baby Klariss, Thankyou sa tanan tanan.
+          </p>
+
+          <p class="letter-paragraph highlight-paragraph">
+            Salamat kay wala ka ni give up nako, Happy Monthsarry sa pinaka wonderful person in the whole world, Happy 46th Monthsarry Iloveyouuuu po! Seeyou the soonest my baby girl. Mwa!
+          </p>
+        </section>
+
+        <!-- Letter Signature & Wax Stamp Bottom -->
+        <footer class="letter-footer">
+          <div class="signature-block">
+            <span class="signature-prefix">Loving you always & forever,</span>
+            <div class="signature-handwritten">Your One & Only 💙</div>
+          </div>
+
+          <div class="footer-seal">
+            <div class="wax-stamp-bottom">
+              <i class="fa-solid fa-heart"></i>
+              <span>46M</span>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Interactive Love React Button Inside Note -->
+        <div class="letter-interaction">
+          <button class="send-hearts-btn" id="sendHeartsBtn">
+            <i class="fa-solid fa-heart"></i>
+            <span>Send Love Back to Him</span>
+            <span class="heart-counter" id="loveCount">46</span>
+          </button>
+          <p class="tap-hint">Tap to shower the screen with love & sparkling stars!</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <p>
+      Crafted with <i class="fa-solid fa-heart pulse-heart"></i> for Klariss &bull; Happy 46th Monthsary
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
